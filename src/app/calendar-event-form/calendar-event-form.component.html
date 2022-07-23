@@ -1,0 +1,23 @@
+<form [formGroup]="formGroup" class="form">
+    <mat-form-field>
+        <mat-label>Title</mat-label>
+        <input matInput formControlName="title"/>
+    </mat-form-field>
+    <mat-form-field>
+        <mat-label>Description</mat-label>
+        <input matInput formControlName="description"/>
+    </mat-form-field>
+    <mat-form-field>
+        <mat-label>Location</mat-label>
+        <input matInput formControlName="location" type="datetime"/>
+    </mat-form-field>
+    <mat-form-field>
+        <mat-label>Start Date</mat-label>
+        <input matInput formControlName="startDate" type="datetime"/>
+    </mat-form-field>
+    <mat-form-field>
+        <mat-label>End Date</mat-label>
+        <input matInput formControlName="endDate"/>
+    </mat-form-field>
+    <button mat-raised-button color="primary" (click)="createEvent()">{{formGroup.get('id')?.value ? 'Update Event' : 'New Event'}}</button>
+</form>

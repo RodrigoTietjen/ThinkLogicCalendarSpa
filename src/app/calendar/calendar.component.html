@@ -1,0 +1,36 @@
+<div class="calendar-container">
+  <table>
+    <thead>
+      <tr>
+        <th *ngFor="let day of weekDays">
+          {{ day }}
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let row of weeks">
+        <td
+          *ngFor="let day of row"
+          [ngClass]="getClass(day)"
+          (click)="
+            updateCurrentDate(
+              currentDate.getFullYear(),
+              currentDate.getMonth(),
+              +day
+            )
+          "
+        >
+          {{ day }}
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="form-container">
+  <app-calendar-event-form></app-calendar-event-form>
+</div>
+
+<div class="table-container">
+  <app-calendar-event-table></app-calendar-event-table>
+</div>
